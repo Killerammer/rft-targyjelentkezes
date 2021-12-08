@@ -1,3 +1,4 @@
+/*
 package hu.nye.rft.tja.web.service;
 
 import java.util.List;
@@ -10,3 +11,4 @@ public interface UserServiceInterface {
     void addUser(CreateUserRequest request);
     void deleteUserById(Long id);
 }
+*/

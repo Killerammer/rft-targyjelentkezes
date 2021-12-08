@@ -1,1 +1,7 @@
-Main.class
+hu\nye\rft\tja\config\SwaggerConfig.class
+hu\nye\rft\tja\data\domain\UserEntity.class
+hu\nye\rft\tja\web\domain\UserView$UserViewBuilder.class
+hu\nye\rft\tja\data\repository\UserRepository.class
+hu\nye\rft\tja\Main.class
+hu\nye\rft\tja\web\domain\UserView.class
+hu\nye\rft\tja\web\controller\PageController.class
