@@ -3,6 +3,7 @@ hu\nye\rft\tja\error\EmailAlreadyInUseException.class
 hu\nye\rft\tja\Main.class
 hu\nye\rft\tja\config\SecurityConfiguration.class
 hu\nye\rft\tja\error\UserNotFoundException.class
+hu\nye\rft\tja\web\domain\SubjectView.class
 hu\nye\rft\tja\data\domain\Subject.class
 hu\nye\rft\tja\web\controller\RegistrationController.class
 hu\nye\rft\tja\web\service\UserServiceInterface.class
