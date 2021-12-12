@@ -29,6 +29,8 @@ public class UserEntity {
 
     private String password;
 
+    private boolean teacher;
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "users_roles",
@@ -39,12 +41,13 @@ public class UserEntity {
 
     private Collection<Role> roles;
 
-    public UserEntity(String firstName, String lastName, String email, String password, Collection<Role> roles) {
+    public UserEntity(String firstName, String lastName, String email, String password, boolean teacher) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.roles = roles;
+        //this.roles = roles;
+        this.teacher = teacher;
     }
 }

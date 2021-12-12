@@ -34,10 +34,7 @@ public class UserServiceImpl implements UserServiceInterface {
 	public UserEntity save(UserView userView) {
 		UserEntity user = new UserEntity(userView.getFirstName(),
 				userView.getLastName(), userView.getEmail(),
-				passwordEncoder.encode(
-						userView.getPassword()
-						)
-						, Arrays.asList(new Role("ROLE_USER")));
+				passwordEncoder.encode(userView.getPassword()),userView.isTeacher());
 		
 		return userRepository.save(user);
 	}
