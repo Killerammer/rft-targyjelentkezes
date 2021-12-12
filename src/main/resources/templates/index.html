@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="hu"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+  <head th:replace="StaticParts :: html_head">
+  </head>
+  <body>
+  <div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container">
+              <a class="navbar-brand" th:href="@{/index}">Tárgy Jelentkező Alkalmazás</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" th:href="@{/index}">Főoldal</a>
+                      </li>
+                      <li class="nav-item" sec:authorize="isAuthenticated()">
+                          <a class="nav-link" th:href="@{/logout}">Kijelentkezés</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </div>
+
+    <div class="mx-auto text-center container shadow-sm p-4">
+    <h2>Tárgy Jelentkező Alkalmazás</h2>
+    Ezaz alkalamzás az RFT feladatokhoz készült.<br><br>
+    Elvárás:<br>
+    Előadó képes tárgyakat hozzáadni a rendszerhez, és ehhez bizonyos adatokat megadni (többek között tárgy neve, időpontja). A hallgatók képesek jelentkezni az órákra. Mindez egy adatbázisban tárolásra kerül.
+    <br><br>
+    A csoportfeladat web alkalmazásához:
+    <ul class="list-group"> 
+        <li class="list-group-item"> 1. Unit tesztek készítése. Valós teszteket kell írni, azaz nem az órán mutatott "hackelt" teszteket, amelyek valótlan kód lefedettséget mutatnak. A webalkalmazás Service osztályainak a lefedettsége 80% kell, hogy legyen.
+        </li>
+        <li class="list-group-item">
+            2. Git: Tegyétek közzé a projektet egy git repositoryban, majd az oktatók email címére küldjétek el a linket vagy a meghívót ha privát a repository. Emailek: norbert_gulacsi@epam.com, laszlo_szikszai@epam.com, attila_jakubat@epam.com, david_borbely@epam.com, kornel_filep@epam.com. A különböző feladatokhoz a megoldásokat pull requesteken keresztül tegyétek bele az alkalmazásba, azaz alkalmazzatok brancheket.
+        </li>
+        <li class="list-group-item">
+            3. API tesztek készítése. Az összes API methodra egy pozitív teszt eset, ellenőrizzétek a status code-t, és a paramétereket ahol lehet. Beégetett IDkat ne tartalmazzanak. (pl.: ne legyen olyan teszt ami elkéri a 123 IDjű usert fixen, hanem ilyenkor hozzatok létre egy usert az api teszt futtatás előtt kóddal, majd azt kérjétek el)
+        </li>
+        <li class="list-group-item">
+            4. Készítsetek egy CI pipelinet. Itt egy CI pipeline szükséges ami lebuildeli az alkalmazást és lefuttatja az 1. pontban említett unit teszteket (GitHub Actions, GitLab CI vagy Jenkins).
+        </li>
+        <li class="list-group-item">
+            5. E2E tesztek készítése. Pozitív esetekre készítsetek UI teszteket az alap felhasználói funkciókra. Az E2E tesztek lehetnek ugyan abban a repositoryban is mint a fő alkalmazás, de ki is rakhatjátok akár egy külön repoba, csak erről akkor írjatok emailt a fent említett email címekre.
+        </li>
+        <li class="list-group-item">
+            6. Performance teszt: Performance tesztek készítése. 1 JMeter script ami használja az összes API methodot. Itt se legyenek beégetett értékek.
+        </li>
+    </ul>
+    </div>
+      
+    <div th:replace="StaticParts :: footer">
+    </div>
+</body>
+</html>

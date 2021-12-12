@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="StaticParts :: html_head">
+</head>
+<body>
+<div th:replace="StaticParts :: menu">
+</div>
+
+<div class="mx-auto text-center container shadow-sm p-4">
+
+    <div th:if="${param.success}">
+        <div class="alert alert-info">Sikeres Regisztráció!
+            </div>
+    </div>
+
+    <form action="#" th:action="@{/Registration}" th:object="${user}" method="post">
+
+        <div class="row justify-content-center">
+            <div class="form-group col-5">
+                <label for="lastname">Vezetéknév</label>
+                <input type="text" class="form-control" id="lastName" th:field="*{lastName}">
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="form-group col-5">
+                <label for="firstname">Keresztnév</label>
+                <input type="text" class="form-control" id="firstName" th:field="*{firstName}">
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="form-group col-5">
+                <label for="email">Email cím</label>
+                <input type="email" class="form-control" id="email" th:field="*{email}">
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="form-group col-5">
+                <label for="password">Jelszó</label>
+                <input type="password" class="form-control" id="password" th:field="*{password}">
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="check">
+                <label class="form-check-label" for="check">Oktató</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+        <button type="submit" class="btn btn-primary">Küldés</button>
+            <br>
+            <span>Regisztráltáltál már? <a href="/" th:href="@{/Login}">Jelentkezz be itt!</a></span>
+        </div>
+    </form>
+</div>
+
+
+<div th:replace="StaticParts :: footer">
+</div>
+</body>
+
+</html>

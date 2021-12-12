@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="StaticParts :: html_head">
+</head>
+
+<body>
+<div th:replace="StaticParts :: menu">
+</div>
+
+    <div class="mx-auto text-center container shadow-sm p-4">
+
+        <form th:action="@{/Login}" method="post">
+
+            <div th:if="${param.error}">
+                <div class="alert alert-danger">Hibás jelszó vagy felhasználónév</div>
+            </div>
+
+            <div th:if="${param.logout}">
+                <div class="alert alert-info">Kijelentkeztél</div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="form-group col-5">
+                    <label for="username">Email cím</label>
+                    <input type="email" class="form-control" id="username" name="username">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="form-group col-5">
+                    <label for="password">Jelszó</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Küldés</button>
+    </form>
+        <div class="form-group">
+						<span>Új felhasználó? <a href="/" th:href="@{/Registration}">Regisztrálj itt!</a></span>
+        </div>
+    </div>
+
+    <div th:replace="StaticParts :: footer">
+    </div>
+</body>
+
+</html>
