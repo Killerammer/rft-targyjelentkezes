@@ -1,20 +1,26 @@
 package hu.nye.rft.tja.web.domain;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 /**
  * Web layer representation of a user.
  */
 @Data
-@Builder
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserView implements Comparable<UserView>{
     private Long id;
-    private String userName;
-    private String emailAddress;
+    private String lastName;
+    private String firstName;
+    private String email;
+    private String password;
+    private boolean teacher;
+
 
     @Override
     public int compareTo(UserView o) {
-        return userName.compareTo(o.userName);
+        return id.compareTo(o.id);
     }
 }
